@@ -24,7 +24,12 @@
             <form:radiobutton path="favoriteLanguage" value="Java"></form:radiobutton> Java<br>
             <form:radiobutton path="favoriteLanguage" value="C#"></form:radiobutton>C#<br>
             <form:radiobutton path="favoriteLanguage" value="PHP"></form:radiobutton>PHP<br>
-            <form:radiobutton path="favoriteLanguage" value="Ruby"></form:radiobutton>Ruby<br>
+            <form:radiobutton path="favoriteLanguage" value="Ruby"></form:radiobutton>Ruby
+            <br><br>
+            Operating Systems:<br>
+            <form:checkbox path="operatingSystems" value="Linux"></form:checkbox> Linux<br>
+            <form:checkbox path="operatingSystems" value="Mac"></form:checkbox> Mac<br>
+            <form:checkbox path="operatingSystems" value="Windows"></form:checkbox> Windows
             <br><br>
             <input type="submit" value="Submit">
         </form:form>
