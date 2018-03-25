@@ -1,3 +1,10 @@
 @RequestMapping
     - usually added to controller methods
     - can also be added to controller class (all contoller methods mapping will become relative to it)
+
+Form Tags
+    - make use of data binding
+    - automatically set/retrieve data from Java object or bean
+
+@ModelAtrribute
+    - is a bean that will hold the form data for data binding
