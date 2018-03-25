@@ -3,6 +3,7 @@ package com.gemalto.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,6 +31,17 @@ public class HelloWorldController {
         name = name.toUpperCase();
         //create the message
         String result = "Yo! " + name;
+        //add message to the model
+        model.addAttribute("message", result);
+        return "helloworld";
+    }
+
+    @RequestMapping("/processFormVersionThree")
+    public String processFormVersionThree(@RequestParam("studentName") String name, Model model) {
+        //process the data
+        name = name.toUpperCase();
+        //create the message
+        String result = "Hey my friend from v3! " + name;
         //add message to the model
         model.addAttribute("message", result);
         return "helloworld";

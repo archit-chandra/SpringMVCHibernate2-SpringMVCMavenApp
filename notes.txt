@@ -1,0 +1,3 @@
+@RequestMapping
+    - usually added to controller methods
+    - can also be added to controller class (all contoller methods mapping will become relative to it)
