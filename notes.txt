@@ -8,3 +8,18 @@ Form Tags
 
 @ModelAtrribute
     - is a bean that will hold the form data for data binding
+
+
+
+Custom Error Messages & Localization
+--------------------------------------
+messages.properties file for different locale and customized messages
+
+typeMismatch.customer.freePasses=Invalid number
+typeMismatch -> error code (error type)
+customer -> model name (spring model attribute name)
+freePasses -> field name
+Invalid number -> custom error message
+
+Refer also for different language:
+https://www.mkyong.com/spring/spring-resource-bundle-with-resourcebundlemessagesource-example/
