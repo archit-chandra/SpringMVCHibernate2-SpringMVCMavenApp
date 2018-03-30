@@ -24,5 +24,7 @@
         Street: ${customer.address.street}
         <br><br>
         Pincode: ${customer.address.pincode}
+        <br><br>
+        Mobile: ${customer.mobile}
     </body>
 </html>

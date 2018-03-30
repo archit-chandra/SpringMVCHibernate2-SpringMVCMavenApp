@@ -44,6 +44,8 @@ public class Customer {
 
     @Valid
     private Address address;
+    
+    private Integer mobile;
 
     public String getFirstName() {
         return firstName;
@@ -99,5 +101,13 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Integer getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(Integer mobile) {
+        this.mobile = mobile;
     }
 }

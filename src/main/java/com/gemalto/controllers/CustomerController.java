@@ -20,6 +20,7 @@ public class CustomerController {
     public void initBinder(WebDataBinder dataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+        dataBinder.setDisallowedFields(new String[]{"mobile"});
     }
 
     @ModelAttribute
