@@ -23,3 +23,13 @@ Invalid number -> custom error message
 
 Refer also for different language:
 https://www.mkyong.com/spring/spring-resource-bundle-with-resourcebundlemessagesource-example/
+
+
+Custom Property Editor Classes
+-------------------------------
+forces user to enter form input in a particular format, otherwise-> validation error
+
+CustomDateEditor
+CustomNumberEditor
+CustomBooleanEditor
+etc

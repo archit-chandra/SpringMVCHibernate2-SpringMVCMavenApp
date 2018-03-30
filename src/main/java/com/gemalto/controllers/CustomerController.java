@@ -1,6 +1,7 @@
 package com.gemalto.controllers;
 
 import com.gemalto.models.Customer;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/customer")
@@ -20,7 +23,10 @@ public class CustomerController {
     public void initBinder(WebDataBinder dataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
-        dataBinder.setDisallowedFields(new String[]{"mobile"});
+        dataBinder.setDisallowedFields(new String[]{"mobile"}); // ignore this field from dtat binding
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy****MM****dd"); // forces to enter this format in the form
+        dataBinder.registerCustomEditor(Date.class, "birthDay", new CustomDateEditor(dateFormat, false));
     }
 
     @ModelAttribute

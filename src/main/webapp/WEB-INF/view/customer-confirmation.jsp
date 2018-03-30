@@ -26,5 +26,7 @@
         Pincode: ${customer.address.pincode}
         <br><br>
         Mobile: ${customer.mobile}
+        <br><br>
+        Birth Day: ${customer.birthDay}
     </body>
 </html>

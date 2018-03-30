@@ -4,6 +4,7 @@ import com.gemalto.validation.CourseCode;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import java.util.Date;
 
 public class Customer {
 
@@ -44,8 +45,11 @@ public class Customer {
 
     @Valid
     private Address address;
-    
+
     private Integer mobile;
+
+    @NotNull(message = "birthDay is required")
+    private Date birthDay;
 
     public String getFirstName() {
         return firstName;
@@ -109,5 +113,13 @@ public class Customer {
 
     public void setMobile(Integer mobile) {
         this.mobile = mobile;
+    }
+
+    public Date getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
     }
 }
