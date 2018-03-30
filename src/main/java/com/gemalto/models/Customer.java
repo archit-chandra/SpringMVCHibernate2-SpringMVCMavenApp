@@ -2,6 +2,7 @@ package com.gemalto.models;
 
 import com.gemalto.validation.CourseCode;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -40,6 +41,9 @@ public class Customer {
     @NotNull(message = "is required")
     @Size(min = 2, max = 30)
     private String hobby;
+
+    @Valid
+    private Address address;
 
     public String getFirstName() {
         return firstName;
@@ -87,5 +91,13 @@ public class Customer {
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
