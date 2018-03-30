@@ -12,5 +12,7 @@
         Postal Code: ${customer.postalCode}
         <br><br>
         Course Code: ${customer.courseCode}
+        <br><br>
+        Hobby: ${customer.hobby}
     </body>
 </html>

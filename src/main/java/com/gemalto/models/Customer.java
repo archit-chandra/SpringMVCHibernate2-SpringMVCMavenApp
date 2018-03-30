@@ -6,6 +6,7 @@ import javax.validation.constraints.*;
 
 public class Customer {
 
+    @NotNull(message = "is required")
     private String firstName;
 
     @NotNull(message = "is required")
@@ -17,6 +18,7 @@ public class Customer {
     @Max(value = 10, message = "must be less than or equal to 10")
     private Integer freePasses;
 
+    @NotNull(message = "is required")
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 char/digits")
     private String postalCode;
 
@@ -25,8 +27,19 @@ public class Customer {
 //    private String courseCode;
 
     // this time with some arguments
+    @NotNull(message = "is required")
     @CourseCode(value = "TOP", message = "must start with TOP")
     private String courseCode;
+
+    // when error message is passed as argument
+//    @NotNull(message = "is required")
+//    @Size(min = 2, max = 30, message = "size must be between {min} and {max}")
+//    private String hobby;
+
+    // when error message is not passed as argument. It will take from message properties file
+    @NotNull(message = "is required")
+    @Size(min = 2, max = 30)
+    private String hobby;
 
     public String getFirstName() {
         return firstName;
@@ -66,5 +79,13 @@ public class Customer {
 
     public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
     }
 }

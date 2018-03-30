@@ -15,6 +15,7 @@
         <br><br>
         <form:form action="processForm" modelAttribute="customer">
             First Name : <form:input path="firstName"></form:input>
+            <form:errors path="firstName" cssClass="error"></form:errors>
             <br><br>
             Last Name (*): <form:input path="lastName"></form:input>
             <form:errors path="lastName" cssClass="error"></form:errors>
@@ -27,6 +28,9 @@
             <br><br>
             Course Code: <form:input path="courseCode"></form:input>
             <form:errors path="courseCode" cssClass="error"></form:errors>
+            <br><br>
+            Hobby: <form:input path="hobby"></form:input>
+            <form:errors path="hobby" cssClass="error"></form:errors>
             <br><br>
             <input type="submit" value="Submit">
         </form:form>
