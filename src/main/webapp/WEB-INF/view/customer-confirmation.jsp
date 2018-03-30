@@ -16,5 +16,17 @@
         Course Code: ${customer.courseCode}
         <br><br>
         Hobby: ${customer.hobby}
+        <br><br>
+        Country: ${customer.address.country}
+        <br><br>
+        City: ${customer.address.city}
+        <br><br>
+        Street: ${customer.address.street}
+        <br><br>
+        Pincode: ${customer.address.pincode}
+        <br><br>
+        Mobile: ${customer.mobile}
+        <br><br>
+        Birth Day: ${customer.birthDay}
     </body>
 </html>

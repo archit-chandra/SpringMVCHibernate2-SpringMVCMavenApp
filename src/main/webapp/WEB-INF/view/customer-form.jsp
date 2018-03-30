@@ -34,6 +34,24 @@
             Hobby: <form:input path="hobby"></form:input>
             <form:errors path="hobby" cssClass="error"></form:errors>
             <br><br>
+            Country: <form:input path="address.country"></form:input>
+            <form:errors path="address.country" cssClass="error"></form:errors>
+            <br><br>
+            City: <form:input path="address.city"></form:input>
+            <form:errors path="address.city" cssClass="error"></form:errors>
+            <br><br>
+            Street: <form:input path="address.street"></form:input>
+            <form:errors path="address.street" cssClass="error"></form:errors>
+            <br><br>
+            Pincode: <form:input path="address.pincode"></form:input>
+            <form:errors path="address.pincode" cssClass="error"></form:errors>
+            <br><br>
+            Mobile (Ignored field from data binding): <form:input path="mobile"></form:input>
+            <form:errors path="mobile" cssClass="error"></form:errors>
+            <br><br>
+            Birth Day: <form:input path="birthDay"></form:input>
+            <form:errors path="birthDay" cssClass="error"></form:errors>
+            <br><br>
             <input type="submit" value="Submit">
         </form:form>
     </body>

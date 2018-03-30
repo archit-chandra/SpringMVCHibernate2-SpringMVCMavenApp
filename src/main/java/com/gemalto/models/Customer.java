@@ -2,7 +2,9 @@ package com.gemalto.models;
 
 import com.gemalto.validation.CourseCode;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
+import java.util.Date;
 
 public class Customer {
 
@@ -40,6 +42,14 @@ public class Customer {
     @NotNull(message = "is required")
     @Size(min = 2, max = 30)
     private String hobby;
+
+    @Valid
+    private Address address;
+
+    private Integer mobile;
+
+    @NotNull(message = "birthDay is required")
+    private Date birthDay;
 
     public String getFirstName() {
         return firstName;
@@ -87,5 +97,29 @@ public class Customer {
 
     public void setHobby(String hobby) {
         this.hobby = hobby;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Integer getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(Integer mobile) {
+        this.mobile = mobile;
+    }
+
+    public Date getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(Date birthDay) {
+        this.birthDay = birthDay;
     }
 }
