@@ -5,6 +5,8 @@
         <title>Customer Confirmation</title>
     </head>
     <body>
+        <h2>${headerLabel}</h2>
+        <hr>
         The customer is confirmed: ${customer.firstName} ${customer.lastName}
         <br><br>
         Free passes: ${customer.freePasses}

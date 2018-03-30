@@ -11,6 +11,8 @@
         </style>
     </head>
     <body>
+        <h2>${headerLabel}</h2>
+        <hr>
         <i>Fill out the form. Asterik (*) means required.</i>
         <br><br>
         <form:form action="processForm" modelAttribute="customer">

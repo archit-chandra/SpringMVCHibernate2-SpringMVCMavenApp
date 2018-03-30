@@ -22,6 +22,11 @@ public class CustomerController {
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
 
+    @ModelAttribute
+    public void addingCommonHeader(Model model) {
+        model.addAttribute("headerLabel", "Customer Application");
+    }
+
     @RequestMapping("/showForm")
     public String showForm(Model customerModel) {
         customerModel.addAttribute("customer", new Customer());
