@@ -33,3 +33,10 @@ CustomDateEditor
 CustomNumberEditor
 CustomBooleanEditor
 etc
+
+
+Pending
+========
+different types of RequestMapping
+@RequestMapping(value="/submitForm", method=RequestMethod.POST)
+@PathVariable
