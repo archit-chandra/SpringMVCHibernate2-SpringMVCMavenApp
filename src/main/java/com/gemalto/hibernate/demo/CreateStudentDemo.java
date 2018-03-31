@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class StudentDemo {
+public class CreateStudentDemo {
 
     public static void main(String[] args) {
 
