@@ -61,3 +61,13 @@ Session
     - Short-lived objects
     - Retrieved from SessionFactory
 
+Primary Keys -> unique, not null values
+Generation Strategy
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+                                              AUTO
+                                              SEQUENCE
+                                              TABLE
+
+But, one can define own CUSTOM generation strategy
+    - org.hibernate.id.SequenceGenerator -> create sublass
+    - public Seralizable generate(..)    -> override method
