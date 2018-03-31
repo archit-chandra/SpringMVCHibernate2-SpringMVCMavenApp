@@ -62,6 +62,7 @@ Session
     - Retrieved from SessionFactory
 
 Primary Keys -> unique, not null values
+------------
 Generation Strategy
     @GeneratedValue(strategy = GenerationType.IDENTITY)
                                               AUTO
@@ -71,3 +72,69 @@ Generation Strategy
 But, one can define own CUSTOM generation strategy
     - org.hibernate.id.SequenceGenerator -> create sublass
     - public Seralizable generate(..)    -> override method
+
+
+Foreign Keys
+------------
+    - Links table together
+    - A field in one field that refers to Primary Key in another table
+    - Main purpose is to preserve the relationship between the tables (Referential Integrity)
+    - Referential Integrity
+                  -> prevents operation that would destroy the relationship
+                  -> ensures only valid data is inserted into the foreign key column
+                     (can contain only valid reference to the primary keyin other table)
+
+
+Entity Lifecycle
+----------------
+    - set of states that a Hibernate entity can go through when used in an application.
+
+    1. Detach -> entity is not associated with Hibernate session.
+    2. Merge  -> If instance is detached from session, then merge will reattach to session.
+    3. Persist-> Transitions new instances to managed state. Next flush/commit will save in DB.
+    4. Remove -> Transitions managed entity to be removed. Next flush/commit will delete from DB
+    5. Refresh-> Reload/synch object with data from DB. Prevents stale data
+
+
+Entity Lifecycle - Session method calls
+----------------------------------------
+    1. New/Transient
+    2. Persistent/Managed
+    3. Detached
+    4. Removed
+
+
+Cascade operations
+------------------
+    - Apply the same operation to related entities
+    - eg. cascade delete (not useful in many-to-many or many-to-one)
+    - By default, no operations are cascaded
+    - can configure
+
+@OneToOne - Cascade Types
+-------------------------
+    1. PERSIST
+    2. REMOVE
+    3. REFRESH
+    4. DETACH
+    5. MERGE
+    6. ALL
+                   -> @OneToOne(cascade=CascadeType.ALL)
+                   -> @OneToOne(cascade={CascadeType.DETACH,
+                                         CascadeType.MERGE,
+                                         CascadeType.PERSIST,
+                                         CascadeType.REFRESH,
+                                         CascadeType.REMOVE})
+
+
+Fetch Types
+-----------
+    1. Eager Loading - retrieves everything
+    2. Lazy Loading - retrieves on request
+    - can configure
+
+
+Relationship Direction
+-----------------------
+    1. Uni-directional
+    2. Bi-directional
