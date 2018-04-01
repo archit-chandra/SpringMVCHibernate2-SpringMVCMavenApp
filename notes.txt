@@ -133,6 +133,15 @@ Fetch Types
     2. Lazy Loading - retrieves on request
     - can configure
 
+Default:
+
+@OneToOne   - Eager
+@OneToMany  - Lazy
+@ManyToOne  - Eager
+@MantToMany - Lazy
+
+** To retrieve lazy data, needs an open Hibernate connection OR Hibernate throws Exception
+
 
 Relationship Direction
 -----------------------
