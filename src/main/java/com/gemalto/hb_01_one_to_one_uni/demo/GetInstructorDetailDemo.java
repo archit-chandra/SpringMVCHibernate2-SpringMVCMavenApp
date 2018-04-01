@@ -34,7 +34,11 @@ public class GetInstructorDetailDemo {
             System.out.println("Associated instructor:" + instructorDetail.getInstructor());
             session.getTransaction().commit();
             System.out.println("Done!");
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
+            // handle connection leak issue
+            session.close();
             factory.close();
         }
     }
