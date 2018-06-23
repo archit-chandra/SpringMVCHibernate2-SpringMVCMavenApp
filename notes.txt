@@ -1,0 +1,149 @@
+@RequestMapping
+    - usually added to controller methods
+    - can also be added to controller class (all contoller methods mapping will become relative to it)
+
+Form Tags
+    - make use of data binding
+    - automatically set/retrieve data from Java object or bean
+
+@ModelAtrribute
+    - is a bean that will hold the form data for data binding
+
+
+
+Custom Error Messages & Localization
+--------------------------------------
+messages.properties file for different locale and customized messages
+
+typeMismatch.customer.freePasses=Invalid number
+typeMismatch -> error code (error type)
+customer -> model name (spring model attribute name)
+freePasses -> field name
+Invalid number -> custom error message
+
+Refer also for different language:
+https://www.mkyong.com/spring/spring-resource-bundle-with-resourcebundlemessagesource-example/
+
+
+Custom Property Editor Classes
+-------------------------------
+forces user to enter form input in a particular format, otherwise-> validation error
+
+CustomDateEditor
+CustomNumberEditor
+CustomBooleanEditor
+etc
+
+
+Pending
+========
+different types of RequestMapping
+@RequestMapping(value="/submitForm", method=RequestMethod.POST)
+@PathVariable
+
+
+Hibernate
+===========
+@Entity
+@Table(name = "table_name")
+@Id
+@Coloumn(name = "column_name")
+
+SessionFactory
+    - Reads the hibernate config file
+    - Creates Session objects
+    - Heavy-weight object
+    - Only created once per session
+
+Session
+    - Wraps the JDBC connection
+    - Main object used to save/retrieve objects
+    - Short-lived objects
+    - Retrieved from SessionFactory
+
+Primary Keys -> unique, not null values
+------------
+Generation Strategy
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+                                              AUTO
+                                              SEQUENCE
+                                              TABLE
+
+But, one can define own CUSTOM generation strategy
+    - org.hibernate.id.SequenceGenerator -> create sublass
+    - public Seralizable generate(..)    -> override method
+
+
+Foreign Keys
+------------
+    - Links table together
+    - A field in one field that refers to Primary Key in another table
+    - Main purpose is to preserve the relationship between the tables (Referential Integrity)
+    - Referential Integrity
+                  -> prevents operation that would destroy the relationship
+                  -> ensures only valid data is inserted into the foreign key column
+                     (can contain only valid reference to the primary keyin other table)
+
+
+Entity Lifecycle
+----------------
+    - set of states that a Hibernate entity can go through when used in an application.
+
+    1. Detach -> entity is not associated with Hibernate session.
+    2. Merge  -> If instance is detached from session, then merge will reattach to session.
+    3. Persist-> Transitions new instances to managed state. Next flush/commit will save in DB.
+    4. Remove -> Transitions managed entity to be removed. Next flush/commit will delete from DB
+    5. Refresh-> Reload/synch object with data from DB. Prevents stale data
+
+
+Entity Lifecycle - Session method calls
+----------------------------------------
+    1. New/Transient
+    2. Persistent/Managed
+    3. Detached
+    4. Removed
+
+
+Cascade operations
+------------------
+    - Apply the same operation to related entities
+    - eg. cascade delete (not useful in many-to-many or many-to-one)
+    - By default, no operations are cascaded
+    - can configure
+
+@OneToOne - Cascade Types
+-------------------------
+    1. PERSIST
+    2. REMOVE
+    3. REFRESH
+    4. DETACH
+    5. MERGE
+    6. ALL
+                   -> @OneToOne(cascade=CascadeType.ALL)
+                   -> @OneToOne(cascade={CascadeType.DETACH,
+                                         CascadeType.MERGE,
+                                         CascadeType.PERSIST,
+                                         CascadeType.REFRESH,
+                                         CascadeType.REMOVE})
+
+
+Fetch Types
+-----------
+    1. Eager Loading - retrieves everything
+    2. Lazy Loading - retrieves on request
+    - can configure
+
+Default:
+
+@OneToOne   - Eager
+@OneToMany  - Lazy
+@ManyToOne  - Eager
+@MantToMany - Lazy
+
+** To retrieve lazy data, needs an open Hibernate connection OR Hibernate throws Exception
+
+
+Relationship Direction
+-----------------------
+    1. Uni-directional
+    2. Bi-directional
