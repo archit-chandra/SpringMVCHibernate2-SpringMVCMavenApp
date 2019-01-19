@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello World - Input Form</title>
+        <title>Hello World - Input Form Output Page</title>
     </head>
     <body>
         Hello World of Spring
